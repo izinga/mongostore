@@ -10,6 +10,7 @@ import (
 	"context"
 	"encoding/base32"
 	"errors"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -70,7 +71,7 @@ func NewMongoStore(c *mongo.Collection, maxAge int, ensureTTL bool,
 			},
 		})
 		if err != nil {
-			panic(err)
+			fmt.Println("We got error in creating index, Error - ", err)
 		}
 	}
 
